@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- ROOMLINK: contact.html. Comments like this explain each part of the page.
+     Edit the text between tags. Class names (e.g. class="card") are styled in css/style.css. -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Makes the page scale correctly on phones. Keep on every page. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact | RoomLink</title>
+        <meta name="description" content="RoomLink: verified student accommodation in Sierra Leone.">
+        <!-- Loads the shared stylesheet. Every page uses the same file. -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- IMAGES: every dashed <div class="ph"> is a placeholder. Replace it with
+             <img class="photo" src="images/your-file.jpg" alt="describe the image"> -->
+
+        <!-- HEADER: same on every page; move class="active" to the current page -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="logo" href="index.html"><i></i>RoomLink</a> <button class="menu-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+                <!-- MAIN NAVIGATION: one <li> per page. Add a link by copying a <li>. -->
+                <nav aria-label="Main">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="listings.html">Listings</a></li>
+                        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                        <li class="mob"><a href="login.html">Log In</a></li>
+                        <li class="mob"><a href="login.html">Sign Up</a></li>
+                    </ul>
+                </nav>
+                <!-- Right side of the header: login link, sign-up button and profile photo placeholder. -->
+                <div class="auth">
+                    <a href="login.html">Log In</a><a class="btn" href="login.html">Sign Up</a>
+                    <div class="ph round avatar" title="Profile photo"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN: everything between here and </main> is unique to this page. -->
+        <main>
+            <section class="container section center">
+                <span class="pill">&#9679; Student Housing Concierge</span>
+                <h1>Get in Touch</h1>
+                <p class="muted">Have questions about finding a room or listing a property? Our dedicated student support team in Freetown is here to help you every step of the way.</p>
+                <!-- Three quick-fact cards. -->
+                <div class="grid g3" style="margin-top:1.2rem;text-align:left">
+                    <div class="card"><strong>&lt; 2 Hours</strong><br><span class="sm muted">Average student inquiry response time</span></div>
+                    <div class="card"><strong>100% In-Person</strong><br><span class="sm muted">Verified campus hostel managers</span></div>
+                    <div class="card"><strong>Direct WhatsApp</strong><br><span class="sm muted">Instant booking &amp; emergency support</span></div>
+                </div>
+            </section>
+
+            <!-- Two columns: contact info on the left, message form on the right. -->
+            <section class="container grid cols-contact" style="align-items:start">
+                <div>
+                    <div class="card" style="margin-bottom:.8rem">
+                        <div class="row"><strong>&#128205; Freetown Headquarters</strong><span class="pill g">Open</span></div>
+                        <p class="muted sm">123 Student Street, Freetown, Sierra Leone</p>
+                    </div>
+                    <div class="card" style="margin-bottom:.8rem">
+                        <strong>&#9742; Phone &amp; WhatsApp Support</strong>
+                        <p class="sm"><strong>+232 76 123 456</strong> (Orange Money / WhatsApp)<br><strong>+232 88 654 321</strong> (Africell / Direct Call)</p>
+                        <p class="muted sm">Mon - Sat: 8:00 AM - 7:00 PM GMT</p>
+                    </div>
+                    <div class="card" style="margin-bottom:.8rem">
+                        <strong>&#9993; Email Desks</strong>
+                        <p class="sm">General &amp; Prospective: <strong class="blue-text">info@roomlink.sl</strong><br>Tenants &amp; Landlords: <strong class="blue-text">support@roomlink.sl</strong></p>
+                    </div>
+                    <!-- List of campus help desks and their opening days. -->
+                    <div class="strip" style="margin-bottom:.8rem">
+                        <span class="label">On-Campus Helpdesks</span>
+                        <p class="muted sm">Visit our student housing ambassadors stationed at university partner locations:</p>
+                        <div class="row sm card" style="padding:.5rem .8rem;margin-bottom:.4rem"><span>Fourah Bay College (FBC)</span><span class="muted">Tues &amp; Thurs, 10am - 3pm</span></div>
+                        <div class="row sm card" style="padding:.5rem .8rem;margin-bottom:.4rem"><span>IPAM Tower Campus</span><span class="muted">Mon &amp; Wed, 11am - 4pm</span></div>
+                        <div class="row sm card" style="padding:.5rem .8rem;margin-bottom:.4rem"><span>Njala University Freetown Hub</span><span class="muted">Friday, 9am - 1pm</span></div>
+                        <div class="row sm card" style="padding:.5rem .8rem;margin-bottom:.4rem"><span>Limkokwing University of Creative Tech.</span><span class="muted">Saturday, 9am - 1pm</span></div>
+                    </div>
+                    <div class="card">
+                        <span class="label">Follow our community</span>
+                        <div class="chips"><span class="chip">Facebook</span><span class="chip">Instagram</span><span class="chip">X (Twitter)</span><span class="chip">LinkedIn</span><span class="chip">TikTok</span></div>
+                    </div>
+                </div>
+                <!-- FORM: action="#" is a placeholder; sending needs a backend or form service -->
+                <form class="card" action="#" method="post" style="padding:1.8rem">
+                    <h2 style="font-size:1.4rem">Send Us a Direct Message</h2>
+                    <p class="muted sm">Fill out the details below. We guarantee a prompt review by our campus residential coordinators.</p>
+                    <div class="fg"><label for="n">Full Name *</label><input id="n" required placeholder="e.g. Aminata Conteh"></div>
+                    <div class="two fg">
+                        <div><label for="e">Email Address *</label><input id="e" type="email" required placeholder="e.g. aminata@student.edu"></div>
+                        <div><label for="p">Phone / WhatsApp *</label><input id="p" type="tel" required placeholder="+232 76 000 000"></div>
+                    </div>
+                    <!-- I am a choices. All radios share one name so only one can be chosen. -->
+                    <fieldset class="fg" style="border:0">
+                        <legend class="sm"><strong>I am a... *</strong></legend>
+                        <div class="two"><label class="opt"><input type="radio" name="r" checked><span>Student looking for room<br><small class="muted">Searching campus hostels</small></span></label><label class="opt"><input type="radio" name="r"><span>Current tenant<br><small class="muted">Maintenance &amp; rent support</small></span></label><label class="opt"><input type="radio" name="r"><span>Landlord / Owner<br><small class="muted">List verified property</small></span></label><label class="opt"><input type="radio" name="r"><span>Other inquiry<br><small class="muted">Partnerships &amp; press</small></span></label></div>
+                    </fieldset>
+                    <div class="fg"><label for="m">Your Message *</label><textarea id="m" required placeholder="Tell us what campus you attend, your budget, preferred move-in timeline, or how we can assist you..."></textarea></div>
+                    <!-- Checkbox for email alerts (checked by default). -->
+                    <label class="opt fg"><input type="checkbox" checked><span>Send me alerts on newly verified rooms near my university and early bird booking discounts.</span></label> <button class="btn block" type="submit">Send Message &rarr;</button>
+                    <p class="center sm muted" style="margin-top:.7rem">&#128274; We respect your privacy and never share your details with third parties.</p>
+                </form>
+            </section>
+
+            <!-- FAQ: each <details> is a question that opens on click. <summary> is the question text. -->
+            <section class="container section" style="max-width:760px">
+                <div class="center">
+                    <span class="label">Instant clarification</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="muted">Common answers to help you book your student living space without stress.</p>
+                </div>
+                <details>
+                    <summary>How quickly can I move in?</summary>
+                    <p class="muted sm">Often within 48 hours of booking confirmation.</p>
+                </details>
+                <details>
+                    <summary>Is my deposit refundable?</summary>
+                    <p class="muted sm">Yes. Deposits stay in escrow until you verify the room.</p>
+                </details>
+                <details>
+                    <summary>Can I inspect the room before paying?</summary>
+                    <p class="muted sm">Yes. Book a virtual or in-person tour first.</p>
+                </details>
+                <p class="center sm muted">Still need answers? Ping us directly on WhatsApp at <strong class="blue-text">+232 76 123 456</strong></p>
+            </section>
+        </main>
+
+        <!-- FOOTER: same on every page -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="fgrid">
+                    <div>
+                        <a class="logo" href="index.html"><i></i>RoomLink</a>
+                        <p class="muted" style="margin-top:.8rem">Sierra Leone and Africa's premier verified university student living network. Safe rooms, trusted roommates, and vibrant academic communities designed for peace of mind.</p>
+                        <div class="socials"><span>&#9679;</span><span>@</span><span>&#8644;</span><span>&#9786;</span></div>
+                    </div>
+                    <div>
+                        <h3>EXPLORE</h3>
+                        <ul>
+                            <li><a href="#">Student Hostels</a></li>
+                            <li><a href="#">Private Studios</a></li>
+                            <li><a href="#">Shared Apartments</a></li>
+                            <li><a href="#">Verified Landlords</a></li>
+                            <li><a href="#">Campus Maps</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Kit</a></li>
+                            <li><a href="#">Ambassadors</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>SUPPORT</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Safety Guidelines</a></li>
+                            <li><a href="#">Scam Prevention</a></li>
+                            <li><a href="#">Tenant Protection</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>LEGAL</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Lease Agreements</a></li>
+                            <li><a href="#">Cookie Settings</a></li>
+                            <li><a href="#">Dispute Resolution</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy"><span>&#128205; 123 Student Street, Freetown, Sierra Leone</span><span>&copy; 2026 RoomLink Housing Technologies. All rights reserved.</span></div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for the mobile menu (see js/main.js). -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

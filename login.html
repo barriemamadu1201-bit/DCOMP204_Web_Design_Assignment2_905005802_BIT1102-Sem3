@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- ROOMLINK: login.html. Comments like this explain each part of the page.
+     Edit the text between tags. Class names (e.g. class="card") are styled in css/style.css. -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Makes the page scale correctly on phones. Keep on every page. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Log In / Sign Up | RoomLink</title>
+        <meta name="description" content="RoomLink: verified student accommodation in Sierra Leone.">
+        <!-- Loads the shared stylesheet. Every page uses the same file. -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- IMAGES: every dashed <div class="ph"> is a placeholder. Replace it with
+             <img class="photo" src="images/your-file.jpg" alt="describe the image"> -->
+
+        <!-- HEADER: same on every page; move class="active" to the current page -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="logo" href="index.html"><i></i>RoomLink</a> <button class="menu-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+                <!-- MAIN NAVIGATION: one <li> per page. Add a link by copying a <li>. -->
+                <nav aria-label="Main">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="listings.html">Listings</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="mob"><a href="login.html">Log In</a></li>
+                        <li class="mob"><a href="login.html">Sign Up</a></li>
+                    </ul>
+                </nav>
+                <!-- Right side of the header: login link, sign-up button and profile photo placeholder. -->
+                <div class="auth">
+                    <a href="login.html">Log In</a><a class="btn" href="login.html">Sign Up</a>
+                    <div class="ph round avatar" title="Profile photo"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN: everything between here and </main> is unique to this page. -->
+        <main>
+            <section class="container section center" style="padding-bottom:1.5rem">
+                <span class="pill">&#10003; Verified Student Housing Network &bull; Sierra Leone &amp; West Africa</span>
+                <h1>Access Your RoomLink Account</h1>
+                <p class="muted">Log in to manage your campus bookings or create a verified student or landlord account in under two minutes.</p>
+            </section>
+
+            <!-- Two cards side by side: Log In (left) and Create Account (right). -->
+            <section class="container grid cols-login" style="align-items:start">
+                <!-- LOGIN: a real login needs a backend -->
+                <form class="card" action="#" method="post" style="padding:1.8rem">
+                    <div class="row"><span class="label">Existing Member</span><span class="pill g">&#128274; 256-bit Encrypted</span></div>
+                    <h2 style="font-size:1.5rem">Welcome Back</h2>
+                    <p class="muted sm">Log in to your RoomLink account to inspect keys, messages &amp; leases.</p>
+                    <div class="fg"><label for="le">Email Address</label><input id="le" type="email" required></div>
+                    <div class="fg">
+                        <div class="row"><label for="lp">Password</label><a href="#" class="sm">Forgot Password?</a></div>
+                        <input id="lp" type="password" required>
+                    </div>
+                    <label class="sm fg" style="font-weight:500"><input type="checkbox">Remember this device for 30 days</label> <button class="btn block" type="submit">Log In &rarr;</button>
+                    <!-- 'OR CONTINUE WITH' divider, then the social sign-in buttons. -->
+                    <div class="or">OR CONTINUE WITH</div>
+                    <div class="sso"><a href="#">Google</a><a href="#">Campus SSO</a><a href="#">Apple ID</a><a href="#">Facebook</a></div>
+                    <div class="strip row" style="padding:.8rem;margin-top:1rem"><span class="sm"><strong>Campus Student Liaison</strong><br><span class="muted">Stuck or locked out? Instant SMS support</span></span><a href="contact.html" class="sm"><strong>Get Help</strong></a></div>
+                </form>
+                <form class="card" action="#" method="post" style="padding:1.8rem">
+                    <div class="row"><span class="label o">Fast-Track Registration</span><span class="pill o">Sierra Leone Semester Ready</span></div>
+                    <h2 style="font-size:1.5rem">Create Account</h2>
+                    <p class="muted sm">Join 14,000+ scholars securing rooms around campus in Freetown, Bo, and beyond.</p>
+                    <!-- Student / Landlord tabs. Visual only; switching forms needs JavaScript. -->
+                    <div class="tabs"><a class="on" href="#">Student / Scholar</a><a href="#">Hostel / Landlord</a></div>
+                    <div class="two fg">
+                        <div><label for="sn">Full Legal Name</label><input id="sn" required></div>
+                        <div>
+                            <label for="sc">Campus / University</label>
+                            <select id="sc">
+                                <option>Fourah Bay College (USL)</option>
+                                <option>Njala University</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="fg">
+                        <div class="row"><label for="se">Academic or Personal Email</label><span class="sm" style="color:var(--green)">Instant verification with .edu/.sl</span></div>
+                        <input id="se" type="email" required>
+                    </div>
+                    <div class="two fg">
+                        <div><label for="sp">Create Password</label><input id="sp" type="password" minlength="8" required></div>
+                        <div><label for="sq">Confirm Password</label><input id="sq" type="password" minlength="8" required></div>
+                    </div>
+                    <!-- Password strength meter (static example). -->
+                    <div class="strip" style="padding:.7rem">
+                        <div class="row sm"><span class="muted">Password Strength:</span><strong style="color:var(--green)">Strong</strong></div>
+                        <div class="strength"><i></i><i></i><i></i><i></i></div>
+                        <span class="sm muted">&#10003; 8+ characters &nbsp;&#10003; Number &amp; symbol &nbsp;&#10003; Mixed casing</span>
+                    </div>
+                    <label class="sm fg" style="font-weight:500;margin-top:1rem"><input type="checkbox" required>I agree to RoomLink's <a href="#">Student Housing Agreement</a>, verified escrow terms, and privacy protocols.</label> <button class="btn orange block" type="submit">Create Student Account &rarr;</button>
+                    <p class="center sm muted" style="margin-top:.8rem">Already registered with RoomLink? <a href="#">Log in here</a></p>
+                    <div class="strip row" style="padding:.7rem;flex-wrap:nowrap;gap:.8rem">
+                        <div class="ph sq" style="width:56px;height:56px;flex:none"></div>
+                        <span class="sm"><strong>Protected by RoomLink Academic Escrow</strong><br><span class="muted">Zero risk of fraud &bull; Up to 7-day room inspection hold</span></span>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Three benefit points and the enrollment notice. -->
+            <section class="container section">
+                <div class="card grid g3">
+                    <div>
+                        <div class="icon">&#9919;</div>
+                        <h3>100% Escrow Protected</h3>
+                        <p class="muted sm">Rent deposit is securely held until you inspect the room and verify the keys in person.</p>
+                    </div>
+                    <div>
+                        <div class="icon g">&#10003;</div>
+                        <h3>Verified Student Hosts</h3>
+                        <p class="muted sm">Every hostel and private landlord undergoes university vetting and property verification.</p>
+                    </div>
+                    <div>
+                        <div class="icon o">&#9733;</div>
+                        <h3>Zero Hidden Agent Fees</h3>
+                        <p class="muted sm">Transparent student pricing with zero middleman extortion, split utility clarity, and online receipts.</p>
+                    </div>
+                </div>
+                <div class="strip row" style="margin-top:1.2rem;padding:1rem"><span class="sm"><strong>&#9679; Active Enrollment Wave:</strong> Over 128 verified rooms currently open around Mount Aureol, Congo Cross &amp; Bo Campus.</span><span class="sm">Need emergency hostel booking? <a class="btn light" href="listings.html">View Urgent Rooms</a></span></div>
+            </section>
+        </main>
+
+        <!-- FOOTER: same on every page -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="fgrid">
+                    <div>
+                        <a class="logo" href="index.html"><i></i>RoomLink</a>
+                        <p class="muted" style="margin-top:.8rem">Sierra Leone and Africa's premier verified university student living network. Safe rooms, trusted roommates, and vibrant academic communities designed for peace of mind.</p>
+                        <div class="socials"><span>&#9679;</span><span>@</span><span>&#8644;</span><span>&#9786;</span></div>
+                    </div>
+                    <div>
+                        <h3>EXPLORE</h3>
+                        <ul>
+                            <li><a href="#">Student Hostels</a></li>
+                            <li><a href="#">Private Studios</a></li>
+                            <li><a href="#">Shared Apartments</a></li>
+                            <li><a href="#">Verified Landlords</a></li>
+                            <li><a href="#">Campus Maps</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Kit</a></li>
+                            <li><a href="#">Ambassadors</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>SUPPORT</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Safety Guidelines</a></li>
+                            <li><a href="#">Scam Prevention</a></li>
+                            <li><a href="#">Tenant Protection</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>LEGAL</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Lease Agreements</a></li>
+                            <li><a href="#">Cookie Settings</a></li>
+                            <li><a href="#">Dispute Resolution</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy"><span>&#128205; 123 Student Street, Freetown, Sierra Leone</span><span>&copy; 2026 RoomLink Housing Technologies. All rights reserved.</span></div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for the mobile menu (see js/main.js). -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

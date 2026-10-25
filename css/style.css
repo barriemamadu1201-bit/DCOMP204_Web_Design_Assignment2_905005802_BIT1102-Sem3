@@ -1,0 +1,1219 @@
+/* ===== ROOMLINK style.css: shared by ALL pages =====
+   HOW TO READ THIS FILE: each rule below has a comment above it saying what it styles.
+   HOW TO EDIT: change colours/fonts in :root first, then tweak individual rules.
+   Class names in the HTML (e.g. class="card") match the selectors here (.card).
+   1 Tokens  2 Base  3 Header  4 Components  5 Page sections  6 Footer  7 Responsive */
+/* 1. TOKENS: change colours/fonts here */
+/* Design tokens. Change a value here and every rule that uses var(--name) updates. */
+:root {
+    --blue: #1b2fc8;
+    --blue-d: #1423a3;
+    --lav: #eceeff;
+    --bg: #f6f7ff;
+    --orange: #ff6a45;
+    --green: #0e8a5f;
+    --navy: #262f45;
+    --text: #151b33;
+    --muted: #5f6784;
+    --line: #e3e6f4;
+    --r: 14px;
+    --w: 1120px;
+    --font: "Segoe UI",Roboto,Arial,sans-serif;
+}
+
+/* 2. BASE */
+/* Reset: remove default browser spacing and make width include padding/border. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Default font, text colour, page background and line spacing for the whole site. */
+body {
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.55;
+    font-size: 1rem;
+}
+
+/* Images never overflow their box (important for phones). */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--blue);
+}
+
+p {
+    margin-bottom: .7rem;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Heading sizes. Use only one <h1> per page. */
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin-bottom: .5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.05rem;
+}
+
+/* Orange outline shows keyboard users which element is selected (accessibility). */
+:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+}
+
+/* Centres page content and limits its width. Wrap every section's content in this. */
+.container {
+    width: 92%;
+    max-width: var(--w);
+    margin: 0 auto;
+}
+
+/* Vertical padding between page sections. */
+.section {
+    padding: 3rem 0;
+}
+
+/* Utility classes: .center centres text, .muted greys it, .sm makes it smaller. */
+.center {
+    text-align: center;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.sm {
+    font-size: .85rem;
+}
+
+/* Utility: .blue-text colours text blue; .grid turns a box into a grid layout. */
+.blue-text {
+    color: var(--blue);
+}
+
+.grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+/* Column helpers: g2 = 2 columns, g3 = 3, g4 = 4 (used with .grid). */
+.g2 {
+    grid-template-columns: repeat(2,1fr);
+}
+
+.g3 {
+    grid-template-columns: repeat(3,1fr);
+}
+
+.g4 {
+    grid-template-columns: repeat(4,1fr);
+}
+
+/* Two equal columns (text on one side, image on the other). */
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* Flex row: puts items side by side with space between them, wraps on small screens. */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+/* IMAGE PLACEHOLDER: replace each <div class="ph"> with <img src="images/your-photo.jpg" alt="..."> */
+/* IMAGE PLACEHOLDER box (dashed). Replace the <div class="ph"> in the HTML with a real <img>. */
+.ph {
+    background: repeating-linear-gradient(45deg,#e4e7fb,#e4e7fb 12px,#eceeff 12px,#eceeff 24px);
+    border: 2px dashed #b7bdea;
+    border-radius: var(--r);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6a72b8;
+    font-size: .8rem;
+    text-align: center;
+    min-height: 180px;
+    width: 100%;
+    position: relative;
+}
+
+.ph.round {
+    border-radius: 50%;
+    min-height: 0;
+    aspect-ratio: 1;
+}
+
+.ph.sq {
+    min-height: 0;
+}
+
+/* when you swap in a real <img>, give it class="photo" to keep the same size/crop */
+/* Add class="photo" to your real <img> so it fills the same space and crops neatly. */
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--r);
+}
+
+/* 3. HEADER */
+/* Top bar. 'sticky' keeps it visible while scrolling. */
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+/* 3-column layout: logo | nav | login buttons. */
+.header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: .8rem 0;
+    gap: 1rem;
+}
+
+/* RoomLink logo text and the small blue square icon (the <i> tag). */
+.logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.logo i {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: var(--blue);
+    display: inline-block;
+}
+
+/* Navigation links in a row. */
+.nav-list {
+    display: flex;
+    gap: .3rem;
+}
+
+.nav-list a {
+    display: block;
+    padding: .4rem .9rem;
+    border-radius: 9px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+/* Hover/current-page style: light purple pill. .active is set in the HTML. */
+.nav-list a:hover,
+.nav-list a.active {
+    background: var(--lav);
+    color: var(--blue);
+}
+
+/* Log In link, Sign Up button and profile picture on the right. */
+.auth {
+    display: flex;
+    gap: .9rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.auth>a:first-child {
+    text-decoration: none;
+    color: var(--text);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+/* Small round profile picture placeholder in the header. */
+.avatar {
+    width: 36px;
+    height: 36px;
+    min-height: 0;
+    border-radius: 50%;
+    border-width: 1px;
+}
+
+/* Hamburger button. Hidden on desktop, shown on phones (see the media query at the bottom). */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    padding: .15rem .65rem;
+    justify-self: end;
+}
+
+/* 4. COMPONENTS */
+/* BUTTON style. Variants: .orange, .light, .white, .block (full width). */
+.btn {
+    display: inline-block;
+    padding: .6rem 1.2rem;
+    border: 0;
+    border-radius: 10px;
+    background: var(--blue);
+    color: #fff;
+    font: 600 .9rem var(--font);
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: var(--blue-d);
+}
+
+.btn.orange {
+    background: var(--orange);
+}
+
+.btn.orange:hover {
+    background: #e65430;
+}
+
+.btn.light {
+    background: var(--lav);
+    color: var(--blue);
+}
+
+.btn.white {
+    background: #fff;
+    color: var(--blue);
+}
+
+.btn.block {
+    width: 100%;
+}
+
+/* Small rounded label (e.g. 'Verified'). Variants: .g green, .o orange, .dk dark. */
+.pill {
+    display: inline-block;
+    padding: .2rem .75rem;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 700;
+    background: var(--lav);
+    color: var(--blue);
+    margin: 0 .15rem .5rem;
+}
+
+.pill.g {
+    background: #dcf4ea;
+    color: var(--green);
+}
+
+.pill.o {
+    background: #ffe8e1;
+    color: #d4482a;
+}
+
+.pill.dk {
+    background: #3a4560;
+    color: #cfd6ee;
+}
+
+/* Small uppercase heading above a title. */
+.label {
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: block;
+    margin-bottom: .4rem;
+}
+
+.label.o {
+    color: #d4482a;
+}
+
+/* White rounded box used for almost everything (cards, forms, info boxes). */
+.card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 1.3rem;
+    box-shadow: 0 2px 10px #1b2fc80a;
+}
+
+/* Square coloured box that holds a symbol/icon. */
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--lav);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: .7rem;
+}
+
+.icon.o {
+    background: #ffe8e1;
+}
+
+.icon.g {
+    background: #dcf4ea;
+}
+
+/* Row of tiny tags (amenities, filters). .chip is one tag. */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+}
+
+.chip {
+    background: var(--lav);
+    color: var(--blue);
+    border-radius: 6px;
+    padding: .15rem .55rem;
+    font-size: .72rem;
+    font-weight: 600;
+}
+
+.chip.gray {
+    background: #f0f2fa;
+    color: var(--muted);
+}
+
+/* Large number used in statistics (e.g. 99%). */
+.stat {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+/* Light purple highlighted panel. */
+.strip {
+    background: var(--lav);
+    border-radius: var(--r);
+    padding: 2rem;
+}
+
+/* Blue gradient call-to-action banner. */
+.cta-band {
+    background: linear-gradient(120deg,var(--blue),#4457e6);
+    color: #fff;
+    border-radius: var(--r);
+    padding: 2rem 2.2rem;
+}
+
+.cta-band p {
+    opacity: .9;
+    margin: 0;
+}
+
+/* Dark navy section (home page guarantee band). */
+.dark {
+    background: var(--navy);
+    color: #fff;
+}
+
+.dark .muted {
+    color: #b7c0db;
+}
+
+.dark .card {
+    background: #323d58;
+    border-color: #46547a;
+    box-shadow: none;
+}
+
+/* property cards (home + listings) */
+/* PROPERTY CARD used on Home and Listings. Image on top, details below. */
+.prop {
+    padding: 0;
+    overflow: hidden;
+}
+
+.prop .ph {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px dashed #b7bdea;
+    min-height: 170px;
+}
+
+/* Badges (Verified, Studio...) float over the top-left of the photo. */
+.prop .badges {
+    position: absolute;
+    top: .6rem;
+    left: .6rem;
+    display: flex;
+    gap: .3rem;
+}
+
+/* Heart button over the top-right of the photo. */
+.prop .heart {
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+}
+
+/* Distance label (e.g. '7 min to campus') over the bottom-left of the photo. */
+.prop .dist {
+    position: absolute;
+    bottom: .6rem;
+    left: .6rem;
+    background: #000a;
+    color: #fff;
+    border-radius: 6px;
+    font-size: .72rem;
+    padding: .1rem .5rem;
+}
+
+/* Text area under the photo. */
+.prop .body {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.prop .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: .72rem;
+    font-weight: 700;
+}
+
+.prop h3 {
+    margin: .3rem 0 .2rem;
+    font-size: 1.1rem;
+}
+
+/* Price text, e.g. $180 /month. */
+.price {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.price small {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.prop .chips {
+    margin: .6rem 0 1rem;
+}
+
+/* 5. PAGE SECTIONS */
+/* HOME PAGE HERO: badges, headline, big photo. */
+.hero {
+    padding: 2.5rem 0 0;
+    text-align: center;
+}
+
+.hero .ph.big {
+    min-height: 380px;
+    margin-top: 1.8rem;
+    border-radius: 20px;
+}
+
+/* Text boxes that sit on top of the hero photo (absolute position). */
+.hero .over {
+    position: absolute;
+    color: #222;
+    font-size: .75rem;
+    background: #fff;
+    border-radius: 10px;
+    padding: .5rem .8rem;
+    text-align: left;
+}
+
+.hero .tl {
+    top: 1rem;
+    left: 1rem;
+}
+
+.hero .br {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.hero .bl {
+    bottom: 1rem;
+    left: 1rem;
+    background: none;
+    color: #444;
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding: 0;
+}
+
+/* Search form that overlaps the bottom of the hero image (negative top margin). */
+.searchbar {
+    background: #fff;
+    border-radius: var(--r);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr) auto;
+    gap: .8rem;
+    align-items: end;
+    text-align: left;
+    box-shadow: 0 12px 30px #1b2fc822;
+    width: 88%;
+    margin: -2.2rem auto 0;
+    position: relative;
+    z-index: 2;
+}
+
+.searchbar+.chips {
+    justify-content: center;
+    margin-top: .8rem;
+}
+
+/* Light purple rounded panel (map section and guarantee panel). */
+.mapbox {
+    background: var(--lav);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+/* LISTINGS: filter sidebar (260px) on the left, results on the right. */
+.sidebar-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.4rem;
+    align-items: start;
+}
+
+/* Small uppercase headings inside the filter sidebar. */
+.filters h3 {
+    font-size: .75rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    margin: 1.2rem 0 .6rem;
+}
+
+.filters label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: .88rem;
+    margin-bottom: .5rem;
+}
+
+.filters input[type=checkbox],
+.filters input[type=radio] {
+    width: auto;
+    margin-right: .5rem;
+}
+
+.minmax {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+}
+
+/* Row of selected filter chips above the results. */
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-size: .75rem;
+}
+
+.active-filters .chip {
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+/* Pagination (Previous 1 2 3 Next). .on marks the current page. */
+.pager {
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+}
+
+.pager a {
+    padding: .3rem .65rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: .85rem;
+    color: var(--text);
+}
+
+.pager .on {
+    background: var(--blue);
+    color: #fff;
+}
+
+/* Numbered square for the 'How it works' steps. Variants .o and .g change colour. */
+.stepnum {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .6rem;
+}
+
+.stepnum.o {
+    background: #c9441f;
+}
+
+.stepnum.g {
+    background: var(--green);
+}
+
+/* Solid blue mission card on the About page. */
+.mission {
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--r);
+    padding: 1.6rem;
+}
+
+.team .ph {
+    min-height: 200px;
+    border-radius: var(--r) var(--r) 0 0;
+}
+
+/* Team member card (photo on top, details below). */
+.team {
+    padding: 0;
+    overflow: hidden;
+}
+
+.team .body {
+    padding: 1rem 1.2rem;
+}
+
+/* Short red bar above the About heading. */
+.accent-bar {
+    width: 50px;
+    height: 4px;
+    background: #d63c3c;
+    margin-bottom: .8rem;
+}
+
+/* forms */
+/* FORMS: labels, inputs, dropdowns and text areas share one look. */
+label {
+    display: block;
+    font-weight: 600;
+    font-size: .82rem;
+    margin-bottom: .3rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: .7rem .85rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #f4f5fd;
+    font: inherit;
+    font-size: .9rem;
+}
+
+/* Checkboxes and radio buttons keep their natural size. */
+input[type=checkbox],
+input[type=radio] {
+    width: auto;
+    margin-right: .4rem;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* 'Form group': spacing below each field. .two puts two fields side by side. */
+.fg {
+    margin-bottom: 1rem;
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Selectable option box (the 'I am a...' choices on the Contact page). */
+.opt {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .6rem;
+    background: #f4f5fd;
+    font-weight: 500;
+}
+
+/* Student / Landlord tab switch on the sign-up form (visual only). */
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--lav);
+    border-radius: 10px;
+    padding: .25rem;
+    margin: .8rem 0 1rem;
+}
+
+.tabs a {
+    text-align: center;
+    padding: .5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.tabs a.on {
+    background: #fff;
+    color: var(--blue);
+}
+
+/* Password strength bars (4 green segments). */
+.strength {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: .3rem;
+    margin: .5rem 0;
+}
+
+.strength i {
+    height: 5px;
+    border-radius: 4px;
+    background: var(--green);
+    display: block;
+}
+
+/* 'OR CONTINUE WITH' divider with lines on both sides. */
+.or {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 1.2rem 0 .8rem;
+}
+
+.or:before,
+.or:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+/* Grid of Google / Apple / Facebook buttons. */
+.sso {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+}
+
+.sso a {
+    background: #f4f5fd;
+    border-radius: 10px;
+    padding: .6rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: .85rem;
+}
+
+/* FAQ accordion: <details> opens and closes with no JavaScript. */
+details {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .9rem 1.1rem;
+    margin-bottom: .6rem;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* 6. FOOTER */
+/* FOOTER: background and text size. */
+.site-footer {
+    background: #eceefc;
+    padding: 2.5rem 0 1.2rem;
+    margin-top: 3rem;
+    font-size: .85rem;
+}
+
+/* Footer columns: brand column is wider than the 4 link columns. */
+.fgrid {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4,1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-footer h3 {
+    font-size: .72rem;
+    letter-spacing: .07em;
+}
+
+.site-footer li {
+    margin-bottom: .45rem;
+}
+
+.site-footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+/* Round social icon placeholders. */
+.socials {
+    display: flex;
+    gap: .5rem;
+}
+
+.socials span {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #dfe2f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bottom footer line: address on the left, copyright on the right. */
+.copy {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+    color: var(--muted);
+}
+
+/* 7. RESPONSIVE */
+/* ===== RESPONSIVE SYSTEM =====
+   Desktop-first. Sizes: 1024 = small laptop/tablet landscape, 960 = menu collapses,
+   860 = tablet portrait (columns stack), 600 = phone. Change a number to move a breakpoint. */
+/* Helpers used everywhere: stop long content from forcing sideways scrolling */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+.grid>*,
+.split>*,
+.row>* {
+    min-width: 0;
+}
+
+.pager {
+    flex-wrap: wrap;
+}
+
+/* Special column layouts (kept in CSS, not inline, so media queries can change them) */
+.cols-mission {
+    grid-template-columns: 1fr 1.4fr;
+}
+
+.cols-contact {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.cols-login {
+    grid-template-columns: 1fr 1.25fr;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.mob {
+    display: none;
+}
+
+/* Log In / Sign Up links shown inside the phone menu only */
+.searchrow {
+    flex-wrap: nowrap;
+}
+
+/* listings search bar stays on one line on desktop */
+/* Small laptops / tablets landscape: 4 columns become 2, listings use 2 per row */
+@media (max-width: 1024px) {
+    .g4 {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .sidebar-layout .g3 {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .sidebar-layout {
+        grid-template-columns: 230px 1fr;
+    }
+}
+
+/* Menu collapses into the hamburger button */
+@media (max-width: 960px) {
+    .header-inner {
+        grid-template-columns: 1fr auto;
+    }
+
+    .auth {
+        display: none;
+    }
+
+    /* desktop login buttons hidden... */
+    .mob {
+        display: block;
+    }
+
+    /* ...and shown inside the menu instead */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: .5rem 4%;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 10px 20px #0000001a;
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-list a {
+        padding: .8rem .9rem;
+    }
+
+    /* bigger tap targets */
+}
+
+/* Tablet portrait: side-by-side layouts stack */
+@media (max-width: 860px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .split,
+    .sidebar-layout,
+    .cols-mission,
+    .cols-contact,
+    .cols-login {
+        grid-template-columns: 1fr;
+    }
+
+    .g3,
+    .sidebar-layout .g3 {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .searchbar {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .searchbar .btn {
+        grid-column: 1/-1;
+    }
+
+    .fgrid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .fgrid>div:first-child {
+        grid-column: 1/-1;
+    }
+
+    /* footer brand block spans full width */
+    .row {
+        justify-content: flex-start;
+    }
+}
+
+/* Phones: everything single column, larger touch targets */
+@media (max-width: 600px) {
+    body {
+        font-size: .97rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .g2,
+    .g3,
+    .g4,
+    .sidebar-layout .g3,
+    .two,
+    .searchbar {
+        grid-template-columns: 1fr;
+    }
+
+    .g3.keep {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    /* small stat rows stay 3 across */
+    .span2 {
+        grid-column: auto;
+    }
+
+    .searchrow {
+        flex-wrap: wrap;
+    }
+
+    .hero .ph.big {
+        min-height: 260px;
+    }
+
+    .hero .tl {
+        display: none;
+    }
+
+    /* hide the small hero label on narrow screens */
+    .hero .br {
+        top: 1rem;
+        bottom: auto;
+        font-size: 1rem;
+    }
+
+    .hero .bl {
+        font-size: 1rem;
+    }
+
+    .searchbar {
+        margin-top: -1.5rem;
+    }
+
+    .btn {
+        padding: .75rem 1.2rem;
+        min-height: 44px;
+    }
+
+    /* comfortable thumb size */
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    /* stops iPhone zooming into fields */
+    .cta-band,
+    .mapbox,
+    .strip {
+        padding: 1.3rem;
+    }
+
+    .copy {
+        flex-direction: column;
+    }
+}
+
+/* Keep hero labels clear of the search bar that overlaps the bottom of the photo */
+.hero .bl,
+.hero .br {
+    bottom: 3.4rem;
+}
+
+@media (max-width: 600px) {
+    .hero .bl {
+        bottom: 2.6rem;
+    }
+
+    .hero .br {
+        bottom: auto;
+    }
+}
+
+/* REAL PHOTOS: a .ph box that holds an <img class="photo"> loses its dashed placeholder look.
+   The photo fills the box and any badges/labels (.over, .badges, .heart, .dist) stay on top. */
+.ph.has-img {
+    border: 0;
+    background: #e4e7fb;
+    overflow: hidden;
+    align-items: stretch;
+}
+.ph.has-img > .photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+.ph.has-img > *:not(.photo) {
+    z-index: 1;
+}
+
+/* Hero caption sits on a real photo now, so make it white with a soft shadow to stay readable. */
+.hero .ph.has-img .bl {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.65);
+}

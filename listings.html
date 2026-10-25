@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- ROOMLINK: listings.html. Comments like this explain each part of the page.
+     Edit the text between tags. Class names (e.g. class="card") are styled in css/style.css. -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Makes the page scale correctly on phones. Keep on every page. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Listings | RoomLink</title>
+        <meta name="description" content="RoomLink: verified student accommodation in Sierra Leone.">
+        <!-- Loads the shared stylesheet. Every page uses the same file. -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- IMAGES: every dashed <div class="ph"> is a placeholder. Replace it with
+             <img class="photo" src="images/your-file.jpg" alt="describe the image"> -->
+
+        <!-- HEADER: same on every page; move class="active" to the current page -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="logo" href="index.html"><i></i>RoomLink</a> <button class="menu-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+                <!-- MAIN NAVIGATION: one <li> per page. Add a link by copying a <li>. -->
+                <nav aria-label="Main">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="listings.html" class="active" aria-current="page">Listings</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="mob"><a href="login.html">Log In</a></li>
+                        <li class="mob"><a href="login.html">Sign Up</a></li>
+                    </ul>
+                </nav>
+                <!-- Right side of the header: login link, sign-up button and profile photo placeholder. -->
+                <div class="auth">
+                    <a href="login.html">Log In</a><a class="btn" href="login.html">Sign Up</a>
+                    <div class="ph round avatar" title="Profile photo"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN: everything between here and </main> is unique to this page. -->
+        <main>
+            <section class="container" style="padding-top:1.5rem">
+                <!-- Breadcrumb trail on the left, verified badge on the right. -->
+                <div class="row sm"><span class="muted">Home &rsaquo; Sierra Leone &rsaquo; <strong class="text">Student Properties</strong></span><span class="pill g">&#10003; 100% University Verified Housing</span></div>
+                <!-- Search bar: input, CLEAR link, map button and filter button. -->
+                <form class="card row searchrow" style="margin:1rem 0" action="#"><input type="search" aria-label="Search" placeholder="Search properties by university, neighborhood, or landmark..." style="flex:1"><a href="#" class="sm muted">CLEAR</a><a class="btn light" href="#">Filter by Map</a><button class="btn" type="submit" aria-label="Filters">&#9776;</button></form>
+                <div class="row" style="margin-top:1.5rem">
+                    <div>
+                        <h1 style="font-size:2rem">Student Accommodations</h1>
+                        <p class="muted">Showing <strong class="blue-text">48 Student Rooms &amp; Flats</strong> available for the 2026 semester</p>
+                    </div>
+                    <div class="sm">
+                        Sort:
+                        <select style="width:auto;display:inline-block" aria-label="Sort">
+                            <option>Recommended</option>
+                            <option>Price: low to high</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section class="container sidebar-layout" style="margin-top:1rem">
+                <!-- FILTER SIDEBAR: filtering logic needs JavaScript -->
+                <aside class="card filters" aria-label="Filters">
+                    <div class="row"><strong>&#9776; Filters</strong><a href="#" class="sm" style="color:#d4482a">Clear all</a></div>
+                    <h3>Location / Campus</h3>
+                    <select aria-label="Campus">
+                        <option>All Freetown &amp; Surrounds</option>
+                    </select>
+                    <h3>Monthly Budget</h3>
+                    <div class="minmax">
+                        <div><label for="mn">MIN (NLe)</label><input id="mn" type="number" value="1900"></div>
+                        <div><label for="mx">MAX (NLe)</label><input id="mx" type="number" value="8500"></div>
+                    </div>
+                    <h3>Property Type</h3>
+                    <label><span><input type="checkbox" checked>Shared Room</span><span class="muted">18</span></label><label><span><input type="checkbox" checked>Private Room</span><span class="muted">14</span></label><label><span><input type="checkbox">Studio Flat</span><span class="muted">11</span></label><label><span><input type="checkbox">Full Apartment</span><span class="muted">5</span></label>
+                    <h3>Key Amenities</h3>
+                    <label><span><input type="checkbox" checked>High-speed Wi-Fi</span><span class="muted"></span></label><label><span><input type="checkbox" checked>Generator / Solar Power</span><span class="muted"></span></label><label><span><input type="checkbox">Furnished</span><span class="muted"></span></label><label><span><input type="checkbox" checked>Water Supply 24/7</span><span class="muted"></span></label><label><span><input type="checkbox">Security Guard on Site</span><span class="muted"></span></label>
+                    <h3>Distance to Campus</h3>
+                    <label><span><input type="radio" name="d" checked>Walking distance (&lt;15 min)</span></label><label><span><input type="radio" name="d">Short bus ride (&lt;30 min)</span></label> <button class="btn block">Apply Filters &#10003;</button>
+                    <p class="center sm muted" style="margin-top:.8rem">Reset All</p>
+                </aside>
+                <div>
+                    <!-- Currently applied filters (display only; real filtering needs JavaScript). -->
+                    <div class="active-filters"><span class="muted">ACTIVE:</span><span class="chip">Freetown Metro &times;</span><span class="chip">Under NLe 8,500/mo &times;</span><span class="chip">Wi-Fi Included &times;</span><span class="chip">24/7 Power &times;</span></div>
+                    <!-- LISTING GRID: copy an <article> to add a property -->
+                    <!-- RESULTS GRID: 3 cards per row (1 on phones). Each <article> is one property; copy to add more. -->
+                    <div class="grid g3">
+                        <article class="card prop">
+                            <div class="ph has-img" style="position:relative">
+                                <img class="photo" src="images/victoria-court-student.jpg" alt="Victoria Court Student residence" loading="lazy">
+                                <div class="badges"><span class="pill g">Verified</span><span class="pill dk">En-suite</span></div>
+                                <div class="heart">&#9825;</div>
+                                <div class="dist">&#9201; 7 min to Fourah Bay</div>
+                            </div>
+                            <div class="body">
+                                <div class="meta"><span class="blue-text">WILBERFORCE</span><span>&#9733; 4.9 (38)</span></div>
+                                <h3>Victoria Court Student...</h3>
+                                <p class="muted sm">Private Room &bull; 1 Bath &bull; Desk Space</p>
+                                <div class="chips"><span class="chip gray">100Mbps</span><span class="chip gray">Solar Backed</span></div>
+                                <div class="row"><span class="price">NLe 5,300<small>/month</small></span><a class="btn" href="contact.html">View Room</a></div>
+                            </div>
+                        </article>
+                        <article class="card prop">
+                            <div class="ph has-img" style="position:relative">
+                                <img class="photo" src="images/campus-view.jpeg" alt="Solomon Academic Hall" loading="lazy">
+                                <div class="badges"><span class="pill g">Female Only</span><span class="pill dk">Verified</span></div>
+                                <div class="heart">&#9825;</div>
+                                <div class="dist">&#9201; 4 min to FBC Main</div>
+                            </div>
+                            <div class="body">
+                                <div class="meta"><span class="blue-text">MOUNT AUREOL</span><span>&#9733; 4.8 (52)</span></div>
+                                <h3>Solomon Academic Hall</h3>
+                                <p class="muted sm">Shared Twin Room &bull; Modern Shared Bath</p>
+                                <div class="chips"><span class="chip gray">24/7 Water</span><span class="chip gray">Security</span></div>
+                                <div class="row"><span class="price">NLe 3,600<small>/month</small></span><a class="btn" href="contact.html">View Room</a></div>
+                            </div>
+                        </article>
+                        <article class="card prop">
+                            <div class="ph has-img" style="position:relative">
+                                <img class="photo" src="images/lumley-beachside.jpg" alt="Lumley Beachside furnished room" loading="lazy">
+                                <div class="badges"><span class="pill g">Bills Included</span><span class="pill dk">Verified</span></div>
+                                <div class="heart">&#9825;</div>
+                                <div class="dist">&#9201; 12 min by Shuttle</div>
+                            </div>
+                            <div class="body">
+                                <div class="meta"><span class="blue-text">LUMLEY BEACH</span><span>&#9733; 5.0 (21)</span></div>
+                                <h3>Lumley Beachside...</h3>
+                                <p class="muted sm">Studio Suite &bull; Sea Breeze &bull; Private Kitchenette</p>
+                                <div class="chips"><span class="chip gray">AC / Fan</span><span class="chip gray">Kitchenette</span></div>
+                                <div class="row"><span class="price">NLe 7,000<small>/month</small></span><a class="btn" href="contact.html">View Room</a></div>
+                            </div>
+                        </article>
+                        <article class="card prop">
+                            <div class="ph has-img" style="position:relative">
+                                <img class="photo" src="images/orchid-house-dormitory.jpg" alt="Orchid House Dormitory" loading="lazy">
+                                <div class="badges"><span class="pill g">Budget Friendly</span><span class="pill dk">Verified</span></div>
+                                <div class="heart">&#9825;</div>
+                                <div class="dist">&#9201; 10 min direct commute</div>
+                            </div>
+                            <div class="body">
+                                <div class="meta"><span class="blue-text">KISSY ROAD</span><span>&#9733; 4.6 (64)</span></div>
+                                <h3>Orchid House Dormitory</h3>
+                                <p class="muted sm">Quad Shared Room &bull; Personal Lockers</p>
+                                <div class="chips"><span class="chip gray">Laundry</span><span class="chip gray">Keycard Entry</span></div>
+                                <div class="row"><span class="price">NLe 2,300<small>/month</small></span><a class="btn" href="contact.html">View Room</a></div>
+                            </div>
+                        </article>
+                        <article class="card prop">
+                            <div class="ph has-img" style="position:relative">
+                                <img class="photo" src="images/st-jude-premium.jpeg" alt="Crown Height en-suite room" loading="lazy">
+                                <div class="badges"><span class="pill g">Solar Powered</span><span class="pill dk">Top Rated</span></div>
+                                <div class="heart">&#9825;</div>
+                                <div class="dist">&#9201; 14 min to Campus</div>
+                            </div>
+                            <div class="body">
+                                <div class="meta"><span class="blue-text">CONGO CROSS</span><span>&#9733; 4.9 (47)</span></div>
+                                <h3>Crown Height En-Suite</h3>
+                                <p class="muted sm">1 Bedroom En-Suite &bull; Solar Backup 24/7</p>
+                                <div class="chips"><span class="chip gray">Private Bath</span><span class="chip gray">Dedicated Study</span></div>
+                                <div class="row"><span class="price">NLe 4,600<small>/month</small></span><a class="btn" href="contact.html">View Room</a></div>
+                            </div>
+                        </article>
+                        <article class="card prop">
+                            <div class="ph has-img" style="position:relative">
+                                <img class="photo" src="images/apex-campus.jpg" alt="Apex Campus residence" loading="lazy">
+                                <div class="badges"><span class="pill g">All Inclusive</span><span class="pill dk">Verified</span></div>
+                                <div class="heart">&#9825;</div>
+                                <div class="dist">&#9201; 9 min to Medical School</div>
+                            </div>
+                            <div class="body">
+                                <div class="meta"><span class="blue-text">BROOKFIELDS</span><span>&#9733; 4.9 (76)</span></div>
+                                <h3>Apex Campus...</h3>
+                                <p class="muted sm">Deluxe Private Studio &bull; Full Service</p>
+                                <div class="chips"><span class="chip gray">Gym Access</span><span class="chip gray">High-Speed</span></div>
+                                <div class="row"><span class="price">NLe 7,700<small>/month</small></span><a class="btn" href="contact.html">View Room</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="row" style="margin:1.5rem 0">
+                        <span class="sm muted">Showing 1 - 6 of 48 properties</span>
+                        <!-- Pagination: change which link has class 'on' to mark the current page. -->
+                        <nav class="pager card" style="padding:.3rem .6rem" aria-label="Pages"><a href="#" class="muted">&larr; Previous</a><a class="on" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">Next &rarr;</a></nav>
+                    </div>
+                    <!-- Guarantee banner at the bottom of the results. -->
+                    <div class="cta-band row">
+                        <div>
+                            <h3>RoomLink Zero-Scam Guarantee</h3>
+                            <p class="sm">Every listing undergoes physical campus agent verification. Rent deposit is held safely until you verify and move into your accommodation.</p>
+                        </div>
+                        <a class="btn white" href="services.html">Learn How It Works</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER: same on every page -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="fgrid">
+                    <div>
+                        <a class="logo" href="index.html"><i></i>RoomLink</a>
+                        <p class="muted" style="margin-top:.8rem">Sierra Leone and Africa's premier verified university student living network. Safe rooms, trusted roommates, and vibrant academic communities designed for peace of mind.</p>
+                        <div class="socials"><span>&#9679;</span><span>@</span><span>&#8644;</span><span>&#9786;</span></div>
+                    </div>
+                    <div>
+                        <h3>EXPLORE</h3>
+                        <ul>
+                            <li><a href="#">Student Hostels</a></li>
+                            <li><a href="#">Private Studios</a></li>
+                            <li><a href="#">Shared Apartments</a></li>
+                            <li><a href="#">Verified Landlords</a></li>
+                            <li><a href="#">Campus Maps</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Kit</a></li>
+                            <li><a href="#">Ambassadors</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>SUPPORT</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Safety Guidelines</a></li>
+                            <li><a href="#">Scam Prevention</a></li>
+                            <li><a href="#">Tenant Protection</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>LEGAL</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Lease Agreements</a></li>
+                            <li><a href="#">Cookie Settings</a></li>
+                            <li><a href="#">Dispute Resolution</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy"><span>&#128205; 123 Student Street, Freetown, Sierra Leone</span><span>&copy; 2026 RoomLink Housing Technologies. All rights reserved.</span></div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for the mobile menu (see js/main.js). -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

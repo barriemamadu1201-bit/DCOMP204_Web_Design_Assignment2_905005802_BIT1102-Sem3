@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home | RoomLink</title>
+        <meta name="description" content="RoomLink: verified student accommodation in Sierra Leone.">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="logo" href="index.html"><i></i>RoomLink</a> <button class="menu-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+                <!-- MAIN NAVIGATION: -->
+                <nav aria-label="Main">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="listings.html">Listings</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="mob"><a href="login.html">Log In</a></li>
+                        <li class="mob"><a href="login.html">Sign Up</a></li>
+                    </ul>
+                </nav>
+                <!-- Right side of the header: login link, sign-up button and profile photo placeholder. -->
+                <div class="auth">
+                    <a href="login.html">Log In</a><a class="btn" href="login.html">Sign Up</a>
+                    <div class="ph round avatar" title="Profile photo"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN:-->
+        <main>
+            <!-- HERO SECTION-->
+            <section class="container hero">
+                <span class="pill g">Verified Landlords</span><span class="pill">No Hidden Fees</span><span class="pill o">Instant Booking Assistance</span>
+                <h1>Find Your Perfect <span class="blue-text">Student Home</span></h1>
+                <p class="muted">Safe, affordable and comfortable accommodation for scholars near Fourah Bay College, Njala University, and premier academic hubs.</p>
+                <div class="ph has-img big">
+                    <img class="photo" src="images/limkokwing-students.jpg" alt="Students on campus in Freetown" loading="lazy">
+                    <div class="over tl"><strong>142 Hostels inspected</strong><br>Mount Aureol &amp; Goderich hubs</div>
+                    <div class="over bl"><span class="pill o">CAMPUS SPOTLIGHT</span><br>Mount Aureol Living Quarters</div>
+                    <div class="over br"><small class="muted">STARTING FROM</small><br>NLe 3,400/mo</div>
+                </div>
+                <!--FORM-->
+                <form class="searchbar" action="listings.html">
+                    <div>
+                        <label for="loc">Location &amp; Campus</label>
+                        <select id="loc">
+                            <option>Fourah Bay College (FBC), Freetown</option>
+                            <option>Njala University</option>
+                        </select>
+                    </div>
+                    <div><label for="mv">Move-in date</label><input id="mv" type="date"></div>
+                    <div>
+                        <label for="rc">Room category</label>
+                        <select id="rc">
+                            <option>All Room Types</option>
+                            <option>Shared</option>
+                            <option>Private</option>
+                        </select>
+                    </div>
+                    <button class="btn" type="submit">Search</button>
+                </form>
+                <!-- Quick filter chips under the search bar. -->
+                <div class="chips"><span class="sm muted">POPULAR FILTERS:</span><span class="chip">Female Only Wings</span><span class="chip">Power Generator Included</span><span class="chip">Walk to Campus (&lt;10 mins)</span><span class="chip">Air Conditioned</span></div>
+            </section>
+
+            <!-- POPULAR PROPERTIES:-->
+            <section class="container section">
+                <div class="row" style="margin-bottom:1.2rem">
+                    <div>
+                        <span class="label o">Handpicked for you</span>
+                        <h2>Popular Properties</h2>
+                        <p class="muted">Verified safe student quarters rated top for study environments and proximity.</p>
+                    </div>
+                    <a class="btn light" href="listings.html">View All Properties &rarr;</a>
+                </div>
+                <div class="grid g4">
+                    <article class="card prop">
+                        <div class="ph has-img" style="position:relative">
+                            <img class="photo" src="images/the-green-resident.jpeg" alt="The Green Resident balcony and garden" loading="lazy">
+                            <div class="badges"><span class="pill g">Verified</span><span class="pill">Near Campus</span></div>
+                            <div class="heart">&#9825;</div>
+                        </div>
+                        <div class="body">
+                            <div class="meta"><span class="blue-text">&#9733; 4.8 (38 reviews)</span></div>
+                            <h3>The Green Resident</h3>
+                            <p class="muted sm">&#128205; Mount Aureol, near FBC Campus</p>
+                            <div class="chips"><span class="chip gray">2 Beds</span><span class="chip gray">1 Bath</span><span class="chip gray">High-Speed</span></div>
+                            <div class="row"><span class="price">NLe 4,300<small>/month</small></span><a class="btn" href="contact.html">View Details</a></div>
+                        </div>
+                    </article>
+                    <article class="card prop">
+                        <div class="ph has-img" style="position:relative">
+                            <img class="photo" src="images/campus-view.jpeg" alt="Campus View student residence" loading="lazy">
+                            <div class="badges"><span class="pill g">Featured</span><span class="pill">Studio</span></div>
+                            <div class="heart">&#9825;</div>
+                        </div>
+                        <div class="body">
+                            <div class="meta"><span class="blue-text">&#9733; 4.8 (52 reviews)</span></div>
+                            <h3>Campus View</h3>
+                            <p class="muted sm">&#128205; Tower Hill, Freetown</p>
+                            <div class="chips"><span class="chip gray">Studio</span><span class="chip gray">Private</span><span class="chip gray">Gen Back-up</span></div>
+                            <div class="row"><span class="price">NLe 5,800<small>/month</small></span><a class="btn" href="contact.html">View Details</a></div>
+                        </div>
+                    </article>
+                    <article class="card prop">
+                        <div class="ph has-img" style="position:relative">
+                            <img class="photo" src="images/greenfield.jpeg" alt="Sunrise Hotel student accommodation building" loading="lazy">
+                            <div class="badges"><span class="pill g">Budget Pick</span><span class="pill">Shared</span></div>
+                            <div class="heart">&#9825;</div>
+                        </div>
+                        <div class="body">
+                            <div class="meta"><span class="blue-text">&#9733; 4.7 (28 reviews)</span></div>
+                            <h3>Sunrise Hotel</h3>
+                            <p class="muted sm">&#128205; Kissy Road / East End</p>
+                            <div class="chips"><span class="chip gray">3 Beds</span><span class="chip gray">Shared Kitchen</span></div>
+                            <div class="row"><span class="price">NLe 2,900<small>/month</small></span><a class="btn" href="contact.html">View Details</a></div>
+                        </div>
+                    </article>
+                    <article class="card prop">
+                        <div class="ph has-img" style="position:relative">
+                            <img class="photo" src="images/standardized-living.jpeg" alt="Riverside Lodge exterior" loading="lazy">
+                            <div class="badges"><span class="pill g">En-suite</span><span class="pill">Private</span></div>
+                            <div class="heart">&#9825;</div>
+                        </div>
+                        <div class="body">
+                            <div class="meta"><span class="blue-text">&#9733; 5.0 (18 reviews)</span></div>
+                            <h3>Riverside Lodge</h3>
+                            <p class="muted sm">&#128205; Wilberforce Heights</p>
+                            <div class="chips"><span class="chip gray">Study Desk</span><span class="chip gray">Gym Access</span></div>
+                            <div class="row"><span class="price">NLe 7,400<small>/month</small></span><a class="btn" href="contact.html">View Details</a></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- MAP PANEL -->
+            <section class="container">
+                <div class="mapbox split">
+                    <div>
+                        <span class="pill">Interactive Campus Map</span>
+                        <h2>Explore Safe Commute Zones</h2>
+                        <p class="muted">See certified shuttle routes, streetlit walkways, student convenience marts, and quiet campus study zones before signing any lease contract.</p>
+                        <a class="btn" href="listings.html">Open Full Campus Map</a> <span class="sm muted">Updated for 2026/27 Academic Term</span>
+                    </div>
+                    <div class="ph has-img"><img class="photo" src="images/apex-campus.jpg" alt="Aerial view of the city and campus commute zone" loading="lazy"></div>
+                </div>
+            </section>
+
+            <!-- DARK GUARANTEE BAND -->
+            <section class="dark section" style="margin-top:3rem">
+                <div class="container center">
+                    <span class="pill dk">INSTITUTIONAL GUARANTEE</span>
+                    <h2>Over 2,500+ students housed across major university hubs</h2>
+                    <p class="muted">We partner directly with university student unions, vetted private owners, and campus security councils to maintain verified student homes.</p>
+                    <div class="grid g3" style="margin-top:1.5rem">
+                        <div class="card">
+                            <div class="stat">99%</div>
+                            <h3>Verified Listings</h3>
+                            <p class="muted sm">Every property is physically surveyed with in-person title checks before going live.</p>
+                        </div>
+                        <div class="card">
+                            <div class="stat">24/7</div>
+                            <h3>Safety Helpline</h3>
+                            <p class="muted sm">Instant on-call support team for maintenance emergencies, disputes, or security queries.</p>
+                        </div>
+                        <div class="card">
+                            <div class="stat">NLe 0</div>
+                            <h3>Booking Protection</h3>
+                            <p class="muted sm">100% refund guarantee if the inspected property does not match listed specifications.</p>
+                        </div>
+                    </div>
+                    <p class="sm" style="margin-top:1.5rem">&#10003; Student Union Endorsed &nbsp; &#10003; Escrow Payment Holding &nbsp; &#10003; Fast Move-In Guarantees</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER: same on every page -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="fgrid">
+                    <div>
+                        <a class="logo" href="index.html"><i></i>RoomLink</a>
+                        <p class="muted" style="margin-top:.8rem">Sierra Leone and Africa's premier verified university student living network. Safe rooms, trusted roommates, and vibrant academic communities designed for peace of mind.</p>
+                        <div class="socials"><span>&#9679;</span><span>@</span><span>&#8644;</span><span>&#9786;</span></div>
+                    </div>
+                    <div>
+                        <h3>EXPLORE</h3>
+                        <ul>
+                            <li><a href="#">Student Hostels</a></li>
+                            <li><a href="#">Private Studios</a></li>
+                            <li><a href="#">Shared Apartments</a></li>
+                            <li><a href="#">Verified Landlords</a></li>
+                            <li><a href="#">Campus Maps</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Kit</a></li>
+                            <li><a href="#">Ambassadors</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>SUPPORT</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Safety Guidelines</a></li>
+                            <li><a href="#">Scam Prevention</a></li>
+                            <li><a href="#">Tenant Protection</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>LEGAL</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Lease Agreements</a></li>
+                            <li><a href="#">Cookie Settings</a></li>
+                            <li><a href="#">Dispute Resolution</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy"><span>&#128205; 123 Student Street, Freetown, Sierra Leone</span><span>&copy; 2026 RoomLink Housing Technologies. All rights reserved.</span></div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for the mobile menu (see js/main.js). -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
