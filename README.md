@@ -2,7 +2,7 @@
 
 **Verified student accommodation for universities in Sierra Leone.**
 
-RoomLink is a responsive, multi-page front-end website that helps students find safe, affordable housing near campuses such as Fourah Bay College and Njala University. It is built with plain HTML, CSS and a small amount of vanilla JavaScript, with no frameworks, build tools or dependencies.
+RoomLink is a responsive, multi-page front-end website that helps students find safe, affordable housing near campuses such as Limkokwing University, Fourah Bay College and Njala University. It is built with plain HTML, CSS and a small amount of vanilla JavaScript, with no frameworks, build tools or dependencies.
 
 > **Status:** Front-end prototype (static site). Forms and search are UI-only and are not connected to a backend. See [Limitations](#limitations) and [Known Issues](#known-issues).
 
